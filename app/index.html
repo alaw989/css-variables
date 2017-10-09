@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body>
+  <div class="project-container">
+    <h1> Update CSS Variables with <span id="title">JS</span></h1>
+    <div class="control-container">
+      <label for="spacing">Blur:</label>
+      <input type="range" id="range" name="blur" min="0" max="100" value="0" data-sizing="px">
+
+      <div class="control">
+        <label for="spacing">Spacing:</label>
+        <input type="range" id="spacing" name="blur" min="0" max="100" value="0" data-sizing="px">
+      </div>
+      <div class="control">
+        <label for="spacing">Base Color:</label>
+        <input type="color" id="color" value="#ff0000">
+      </div>
+    </div>
+    <div class="image">
+      <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+    </div>
+  </div>
+</body>
+
+<script>
+  function testtest(e) {
+
+    var rangeInput = document.getElementById('range');
+    var spacingInput = document.getElementById('spacing');
+    var colorInput = document.getElementById('color');
+    var title = document.getElementById('title');
+
+    rangeInput.addEventListener('change', function() {
+      var x = document.getElementById('range').value;
+      document.body.style.setProperty('--blur', `blur(${x}px)`);
+    });
+
+    spacingInput.addEventListener('change', function() {
+      var y = document.getElementById('spacing').value;
+      document.body.style.setProperty('--margintop', `${y}px`)
+      document.body.style.setProperty('--marginleft', `${y}px`)
+    });
+
+    colorInput.addEventListener('change', function() {
+      var z = document.getElementById('color').value;
+      document.body.style.setProperty('--bgcolor', z)
+    });
+  }
+
+  testtest();
+</script>
+
+</html>
